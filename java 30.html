@@ -1,0 +1,201 @@
+<html>
+<head>
+    <title>FEEDBACK FORM</title>
+    <script language="javascript">
+
+        function check() 
+        {
+            var fname, mname, lname, city, add, state, other, pin, occu, comments;
+
+            fname = document.feedback.n1.value;
+            mname = document.feedback.n2.value;
+            lname = document.feedback.n3.value;
+            city = document.feedback.city.value;
+            add = document.feedback.address.value;
+            state = document.feedback.state.value;
+            other = document.feedback.oth.value;
+            pin = document.feedback.pin.value;
+            comments = document.feedback.comment.value;
+            console.log(">>>>>",document.feedback.o[0])
+            if (document.feedback.o[0].checked == true)
+            {
+                occu = "Business";
+            }
+            else 
+            {
+                occu = "Job";
+            }
+            if (fname == "") 
+            {
+                alert("Enter first name");
+                document.feedback.n1.focus();
+            }
+            else if (mname == "") 
+            {
+                alert("Enter middle name");
+                document.feedback.n2.focus();
+            }
+            else if (lname == "") 
+            {
+                alert("Enter last name");
+                document.feedback.n3.focus();
+            }
+            else if (add == "") 
+            {
+                alert("Enter address");
+                document.feedback.address.focus();
+            }
+            else if (city == "other" && other == "") 
+            {
+                alert("Enter city in others column.");
+                document.feedback.oth.focus();
+            }
+            else if (state == "") 
+            {
+                alert("Enter State");
+                document.feedback.state.focus();
+            }
+            else if (pin == "") 
+            {
+                alert("Enter Pin");
+                document.feedback.pin.focus();
+            }
+            else if (comments == "") 
+            {
+                alert("Please enter your comments.");
+                document.feedback.comment.focus();
+            }
+            else 
+            {
+                document.write("<html>");
+                document.write("<head>");
+                document.write("<title>FORM</title>");
+                document.write("</head>");
+                document.write("<body>");
+                document.write("<h1 align=center>");
+                document.write("Filled form");
+                document.write("</h1>");
+                document.write("<table border=1 align=center>");
+                document.write("<tr>");
+                document.write("<td>");
+                document.write("Name:");
+                document.write("</td>");
+                document.write("<td>");
+                document.write(fname + "&nbsp;" + mname + "&nbsp;" + lname);
+                document.write("</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>");
+                document.write("Address:");
+                document.write("</td>");
+                document.write("<td>");
+                document.write(add + "<br>" + city + "-" + pin + "<br>" + state + "-");
+                document.write("</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>");
+                document.write("Occupation");
+                document.write("</td>");
+                document.write("<td>");
+                document.write(occu);
+                document.write("</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>");
+                document.write("Comments:");
+                document.write("</td>");
+                document.write("<td>");
+                document.write(comments);
+                document.write("</td>");
+                document.write("</tr>");
+                document.write("</table>");
+                document.write("<center>");
+                document.write("<a href=java 29.html>");
+                document.write("Back");
+                document.write("</a>");
+                document.write("</center>");
+                document.write("</body>");
+                document.write("</html>");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="feedback">
+        <table border="2" align="center">
+            <tr>
+                <td colspan="2" align="center">
+                    <font size="6" color="red">FEEDBACK</font><BR>
+                    Please fill the form properly.
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">Name:</td>
+                <td>
+                    <input type="text" name="n1" size="10">&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="n2" size="10">&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="n3" size="10"><br>&nbsp;&nbsp;
+                    First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Middle Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">Address:</td>
+                <td>
+                    <textarea rows="5" cols="50" name="address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+            <td>
+                <select name="city">
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Baroda">Baroda</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Others">Others</option>
+                </select>
+                &nbsp;&nbsp;Specify if other:&nbsp;&nbsp;
+                <input type="text" size="15" name="oth">
+            </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input type="text" size="15" name="state">
+                </td>
+            </tr>
+            <tr>
+                <td>PIN:</td>
+
+                <td>
+                    <input type="text" size="15" name="pin">
+                </td>
+            </tr>
+            <tr>
+                <td>Occupation:</td>
+                <td>
+                    <input type="radio" name="o" value="Business" checked>Business
+                    <input type="radio" name="o" value="Job">Job
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Please write your comments below:<br>
+                    <textarea name="comment" cols="62" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align=center>
+                    <input type="button" name="submit" value="Submit" onClick="check();">&nbsp;&nbsp;
+                    <input type="reset" name="clear" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
